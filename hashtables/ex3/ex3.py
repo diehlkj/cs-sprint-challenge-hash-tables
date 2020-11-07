@@ -1,10 +1,19 @@
 def intersection(arrays):
     result = []
+    counts = {}
     
+    for num in arrays[0]:
+        counts[num] = 0
+        
     for array in arrays:
-        print(array[1])
-
-    # return result
+        for num in array:
+            if num in counts:
+                counts[num] += 1
+                
+    for num in counts:
+        if counts[num] == len(arrays):
+            result.append(num)
+    return result
 
 
 if __name__ == "__main__":
