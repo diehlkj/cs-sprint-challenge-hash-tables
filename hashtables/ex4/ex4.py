@@ -1,8 +1,14 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    result = []
+    the_positives_and_the_negatives = {}
+    
+    for num in a:
+        if num < 0:
+            the_positives_and_the_negatives[num] = 0
+    for num in a:
+        if num > 0 and num - num * 2 in the_positives_and_the_negatives:
+            result.append(num)
+            
 
     return result
 
